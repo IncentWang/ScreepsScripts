@@ -3,6 +3,7 @@ var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
 var roleRepairer = require('role.repairer');
 var funcMemoryCleanup = require('func.memorycleanup');
+var funcGeneratePixels = require('func.generatePixels');
 
 module.exports.loop = function () {
     var harvestNum = _.filter(Game.creeps, (creep) => creep.memory.role == 'worker');
@@ -37,4 +38,5 @@ module.exports.loop = function () {
         }
     }
     funcMemoryCleanup.run();
+    funcGeneratePixels.run(Game);
 }
