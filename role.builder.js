@@ -5,7 +5,7 @@ var roleBuilder = {
         }
         if(creep.memory.building == true){
             var constructionSiteToBuildList = creep.room.find(FIND_CONSTRUCTION_SITES);
-            var constructingRoad = _.remove(constructionSiteToBuildList, function(element){return element.structureType == STRUCTURE_ROAD});
+            //var constructingRoad = _.remove(constructionSiteToBuildList, function(element){return element.structureType == STRUCTURE_ROAD});
             if(creep.build(constructionSiteToBuildList[0]) == ERR_NOT_IN_RANGE){
                 creep.moveTo(constructionSiteToBuildList[0], {visualizePathStyle : {stroke: '#fff'}});
             }

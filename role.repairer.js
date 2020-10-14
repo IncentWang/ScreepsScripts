@@ -5,9 +5,9 @@ var roleRepairer = {
         }
         if(creep.memory.repairing){
             var repairingList = _.filter(creep.room.find(FIND_STRUCTURES), (structure) => structure.hits < structure.hitsMax);
-            var adjustedList = _.remove(repairingList, function(structure) {return structure.structureType == STRUCTURE_WALL && structure.hits > 150000})
-            if(creep.repair(adjustedList[adjustedList.length - 1]) == ERR_NOT_IN_RANGE){
-                creep.moveTo(adjustedList[adjustedList.length - 1], {visualizePathStyle : {stroke: '#fff'}})
+            var adjustedList = _.remove(repairingList, function(structure) {return structure.structureType == STRUCTURE_WALL && structure.hits > 15000 || structure.structureType == STRUCTURE_ROAD && structure.hits > 5000})
+            if(creep.repair(repairingList[repairingList.length - 1]) == ERR_NOT_IN_RANGE){
+                creep.moveTo(repairingList[repairingList.length - 1], {visualizePathStyle : {stroke: '#fff'}})
             }
             
         }
